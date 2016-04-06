@@ -8,7 +8,8 @@
   "project_page": "https://github.com/st01tkh/puppet-librarian_puppet",
   "issues_url": "https://github.com/st01tkh/puppet-librarian_puppet/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"chocolatey-chocolate","version_requirement":">= 1.0.0"}
   ]
 }
 
