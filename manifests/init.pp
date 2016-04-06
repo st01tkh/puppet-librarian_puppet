@@ -36,11 +36,12 @@ class librarian_puppet {
   $facter_bin_dir = file_join_win(["${pl_basedir}", "facter", "bin"])
   $hiera_bin_dir = file_join_win(["${pl_basedir}", "hiera", "bin"])
 
-  #exec {"some commadn":
-  #    path => ["$sysroot", "$sys32", "${pl_base_bin_dir}", "${puppet_bin_dir}"],
-  #} ->
   windows_path {"add puppet's embedded ruby bin dir to PATH":
     ensure      => present,
     directory   => "$pl_ruby_bin_dir",
+  }
+  exec {"puppet_ruby_gem_install_librarian-puppet":
+      path => ["$sysroot", "$sys32", "${pl_base_bin_dir}", "${puppet_bin_dir}", "${pl_ruby_bin_dir}"],
+      command => "gem.bat install librarian-puppet",
   }
 }
