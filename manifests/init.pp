@@ -53,7 +53,7 @@ class librarian_puppet {
     exec {"puppet_ruby_gem_install_librarian-puppet":
         path => ["$sysroot", "$sys32", "${pl_base_bin_dir}", "${puppet_bin_dir}", "${pl_ruby_bin_dir}"],
         command => "gem.bat install -f librarian-puppet",
-    } ->
+    }
   } else {
       notify {"$operatingsystem is not supported": }
   }
